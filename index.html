@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bandwidth Humana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+  <header>
+    <h1>Bandwidth Humana</h1>
+    <p>
+      Quão eficiente seria uma conexão utilizando humanos como transmissores de
+      informação? Se a tecnologia de 4G pudesse ser substituída por um humano,
+      quão (in)eficaz seria?
+    </p>
+  </header>
+  <main>
+    <h2>Humano padrão</h2>
+    <section class="side-by-side">
+      <article>
+        <h3>Escrita ("upload")</h3>
+        <p>
+          Média humana de <strong>32.5 WPM</strong> (palavras por minuto).<a href="#1"></a>
+        </p>
+        <p>
+          Cada palavra tem, em média na língua inglesa, 4.79 caracteres.<a href="#2"></a>
+          Portanto, a escrita tem uma velocidade média de 32.5 × 4.79 =
+          <strong>155.675 CPM</strong>.
+        </p>
+      </article>
+      <article>
+        <h3>Leitura ("download")</h3>
+        <p>
+          Média humana de <strong>863 CPM</strong>. (caracteres por minuto)<a href="#3"></a>
+        </p>
+        <cite></cite>
+      </article>
+    </section>
+    <section class="onesie">
+      <p>
+        Por simplicidade, utilizando como codificação ASCII, podemos assumir
+        que cada caractere requer 7 bits para ser representado.<a href="#4"></a>
+      </p>
+    </section>
+    <section class="side-by-side">
+      <article>
+        <p>
+          155.675 × 7 = <strong>1089.725 bits/minuto</strong>.
+        </p>
+        <p>
+          1089.725 / 60 = <strong>18.162 bits/segundo</strong>.
+        </p>
+        <p>
+          18.162 / 1000 = <strong>0.018 Kbps</strong>.
+        </p>
+      </article>
+      <article>
+        <p>
+          863 × 7 = <strong>6041 bits/minuto</strong>.
+        </p>
+        <p>
+          6041 / 60 = <strong>100.68<span class="over">3</span> bits/segundo</strong>.
+        </p>
+        <p>
+          100.68<span class="over">3</span> / 1000 = <strong>0.101 Kbps</strong>.
+        </p>
+      </article>
+    </section>
+    <section class="onesie">
+      <p>
+        Para efeito de comparação, uma internet móvel 2.5G (GPRS) tem uma velocidade
+        teórica de <strong>14&nbsp;Kbps</strong> para upload e
+        <strong>40&nbsp;Kbps</strong> para download.<a href="#5"></a>
+      </p>
+    </section>
+    <section class="side-by-side">
+      <article>
+        <p>
+          Isso é uma velocidade de upload:
+        </p>
+        <p>
+          14 / 0.018 = <strong>777.78 vezes</strong> maior.
+        </p>
+      </article>
+      <article>
+        <p>
+          Isso é uma velocidade de download:
+        </p>
+        <p>
+          40 / 0.101 = <strong>396.04 vezes</strong> maior.
+        </p>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <section id="citations">
+      <h2>Citações</h2>
+      <article id="1">
+        Halverson, Christine; Horn, Daniel; Karat, Clare-Marie; Karat, John.
+        <cite>
+          <a href="http://iovs.arvojournals.org/article.aspx?articleid=2166061">
+            Patterns of entry and correction in large vocabulary continuous
+            speech recognition systems
+          </a>
+        </cite> (1999). In Proceedings of the SIGCHI conference on Human Factors
+        in Computing Systems (CHI '99). Association for Computing Machinery, NY.
+        <a href="https://doi.org/10.1145/302979.303160">
+          doi:https://doi.org/10.1145/302979.303160
+        </a>
+      </article>
+      <article id="2">
+        Norvig, Peter.
+        <cite>
+          <a href="http://norvig.com/mayzner.html">
+            English Letter Frequency Counts: Mayzner Revisited</a></cite>.
+      </article>
+      <article id="3">
+        Dietz, Klaus; Trauzettel-Klosinski, Susanne; et al.
+        <cite>
+          <a href="http://iovs.arvojournals.org/article.aspx?articleid=2166061">
+            Standardized Assessment of Reading Performance: The New International
+            Reading Speed Texts</a>
+        </cite> (2012). Investigative Ophthalmology & Visual Science (August
+        2012), Vol.53.
+        <a href="https://doi.org/10.1167/iovs.11-8284">
+          doi:https://doi.org/10.1167/iovs.11-8284</a>
+      </article>
+      <article id="4">
+        Mackenzie, Charles E.
+        <cite>
+          <a href="https://books.google.com.br/books?id=6-tQAAAAMAAJ">
+            Coded Character Sets, History and Development</a>
+        </cite> (1980). IBM Corporation.
+        ISBN 0-201-14460-3. [<a href="https://textfiles.meulie.net/bitsaved/Books/Mackenzie_CodedCharSets.pdf">PDF</a>]<br>
+        p. 236 § 14.5, <q>Decision 4.&nbsp;&nbsp;&nbsp;The code would not be 8
+        bits—therefore, 7 bits.</q>
+      </article>
+      <article id="5">
+        <cite>
+          <a href="https://www.3gpp.org/technologies/keywords-acronyms/102-gprs-edge">
+            GPRS &amp; EDGE</a></cite>. 3GPP.
+      </article>
+    </section>
+  </footer>
+  <link href="./style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,600;1,400;1,600&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+</body>
+</html>
