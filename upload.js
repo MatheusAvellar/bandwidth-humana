@@ -1,6 +1,6 @@
 let write_words = [];
 
-const up = document.getElementById("upload-input");
+const up_input = document.getElementById("upload-input");
 const preview = document.getElementById("upload-preview");
 
 const typing_el = document.getElementById("upload-typing");
@@ -47,7 +47,7 @@ window.addEventListener("load", initUpload);
 function nextUploadWord() {
   typing_right.textContent = "";
   typing_wrong.textContent = "";
-  up.value = "";
+  up_input.value = "";
   current_upload_index = 0;
   upload_done = false;
   updateUploadValues();
@@ -71,17 +71,34 @@ function updateUploadValues() {
   up_kbps_el.textContent = kbps.toFixed(4);
 }
 
-up.oninput = e => {
+let up_prev_len_android = 0;
+up_input.onkeyup = e => {
   if(!upload_started) {
     upload_started = true;
     upload_start_time = new Date();
   }
   if(upload_over) return;
-  if(!e.data || e.data.length > 1) return;
+
+  let key = e.key || "";
+  // Chrome on Android hack :(
+  // See bugs.chromium.org/p/chromium/issues/detail?id=118639
+  if(e.keyCode === 229) {
+    const text = up_input.value || "";
+    const text_len = text.length || 0;
+    if(up_prev_len_android === text_len) {
+      // Nothing changed
+      return;
+    }
+    // Something did change, update saved length
+    up_prev_len_android = text_len;
+    // Key is the last character in the field
+    key = text[Math.max(text_len-1,0)];
+  }
+  if(!key || key.length > 1) return;
 
   if(!upload_done) {
-    if(e.data === current_upload_word.charAt(current_upload_index)) {
-      typing_right.textContent += e.data;
+    if(key === current_upload_word.charAt(current_upload_index)) {
+      typing_right.textContent += key;
       current_upload_index++;
       char_count++;
       if(current_upload_index >= current_upload_word.length) {
@@ -93,7 +110,7 @@ up.oninput = e => {
       upload_mistakes++;
       upload_done = true;
     }
-  } else if(e.data === " ") {
+  } else if(key === " ") {
     nextUploadWord();
   } else {
     upload_mistakes++;

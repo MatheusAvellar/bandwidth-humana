@@ -48,20 +48,20 @@ a[href^="#"]:hover {
 a[href^="#"]::before {
   content: attr(href);
 }
-#citations > article,
-#footnotes > article {
+#footnotes > article,
+#citations > article {
   margin-left: 1.5em;
-}
-#citations > article::before {
-  content: attr(id) ".";
-  position: absolute;
-  transform: translateX(-1.5em);
 }
 #footnotes > article::before {
   content: attr(id) ".";
   position: absolute;
   font-size: 75%;
   transform: translateX(-1.95em);
+}
+#citations > article::before {
+  content: attr(id) ".";
+  position: absolute;
+  transform: translateX(-1.5em);
 }
 blockquote.tweet {
   max-width: 500px;
@@ -153,14 +153,49 @@ figure.message {
   display: flex;
   flex-direction: row;
   margin: 2em auto;
-  width: 50%;
+  width: 60%;
   background-color: #f5f5f5;
   padding: 1.5em 2em;
   border-radius: 6px;
+  box-sizing: border-box;
 }
 #selfie {
   width: 8em;
   height: 8em;
   border-radius: 100%;
   margin-right: 2em;
+}
+
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 16px;
+  }
+  body {
+    margin: 0.75em 0.5em 2em;
+  }
+  .side-by-side > article {
+    padding: 0;
+  }
+  .side-by-side > article:first-of-type {
+    padding-right: 0.25em;
+  }
+  .side-by-side > article+article {
+    padding-left: 0.25em;
+  }
+  .onesie {
+    padding: 0 1em;
+  }
+  #footnotes > article,
+  #citations > article {
+    margin-left: 1em;
+  }
+  #footnotes > article::before {
+    transform: translateX(-1.8em);
+  }
+  #citations > article::before {
+    transform: translateX(-1em);
+  }
+  #me {
+    width: 100%;
+  }
 }
