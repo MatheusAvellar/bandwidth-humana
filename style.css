@@ -164,6 +164,7 @@ figure.message {
   height: 8em;
   border-radius: 100%;
   margin-right: 2em;
+  user-select: none;
 }
 
 @media screen and (max-width: 700px) {
