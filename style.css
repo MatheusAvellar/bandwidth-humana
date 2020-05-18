@@ -5,6 +5,7 @@ html {
 }
 body {
   font-family: "Jost", sans-serif;
+  margin: 0.75em 0 2em;
 }
 header,main,footer {
   max-width: 700px;
@@ -16,7 +17,12 @@ footer {
 h1,h2,h3,h4 {
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
-  margin: .75em 0 .6em;
+  margin: .75em 0 .5em;
+}
+p.sub-title {
+  font-size: 75%;
+  margin: -.75em 0 0;
+  color: #555;
 }
 strong,b {
   font-weight: 600;
@@ -42,7 +48,8 @@ a[href^="#"]:hover {
 a[href^="#"]::before {
   content: attr(href);
 }
-#citations > article {
+#citations > article,
+#footnotes > article {
   margin-left: 1.5em;
 }
 #citations > article::before {
@@ -50,7 +57,22 @@ a[href^="#"]::before {
   position: absolute;
   transform: translateX(-1.5em);
 }
-
+#footnotes > article::before {
+  content: attr(id) ".";
+  position: absolute;
+  font-size: 75%;
+  transform: translateX(-1.95em);
+}
+blockquote.tweet {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 1em;
+  border-left: 5px solid #efefef;
+}
+blockquote.tweet cite,
+blockquote.tweet cite time {
+  display: block;
+}
 .onesie {
   padding: 0 3em;
   box-sizing: border-box;
@@ -62,6 +84,83 @@ a[href^="#"]::before {
   padding: 0 1em;
   vertical-align: top;
 }
-span.over {
-  text-decoration: overline;
+#upload-preview {
+  white-space: nowrap;
+  overflow-x: hidden;
+  background-color: #efefef;
+  border: 1px solid #b0b0b0;
+  padding: .1em .3em;
+}
+#upload-next > span {
+  margin-right: .25em;
+}
+#upload-typing {
+  position: absolute;
+}
+#upload-right {
+  background-color: #b9f3bb;
+}
+#upload-wrong {
+  background-color: #ffcecb;
+}
+#upload-input {
+  font: inherit;
+  white-space: nowrap;
+  overflow-x: hidden;
+  background-color: #fefefe;
+  border: 1px solid #b0b0b0;
+  padding: .1em .3em;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+#download-display {
+  text-align: center;
+  white-space: nowrap;
+  overflow-x: hidden;
+  background-color: #efefef;
+  border: 1px solid #b0b0b0;
+  padding: .1em .3em;
+}
+#download-range {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+figure {
+  margin: 2em 0;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  width: 100%;
+}
+figure.no-connection {
+  background-image: url(./mirage-no-connection.png);
+  height: 10em;
+}
+figure.waiting {
+  background-image: url(./mirage-waiting.png);
+  height: 5em;
+}
+figure.message {
+  margin: 0;
+  background-image: url(./mirage-message.png);
+  height: 12em;
+}
+
+#me {
+  display: flex;
+  flex-direction: row;
+  margin: 2em auto;
+  width: 50%;
+  background-color: #f5f5f5;
+  padding: 1.5em 2em;
+  border-radius: 6px;
+}
+#selfie {
+  width: 8em;
+  height: 8em;
+  border-radius: 100%;
+  margin-right: 2em;
 }

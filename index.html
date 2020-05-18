@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
   <meta charset="utf-8">
   <title>Bandwidth Humana</title>
@@ -10,45 +10,67 @@
     <h1>Bandwidth Humana</h1>
     <p>
       Quão eficiente seria uma conexão utilizando humanos como transmissores de
-      informação? Se a tecnologia de 4G pudesse ser substituída por um humano,
-      quão (in)eficaz seria?
+      informação? Se a tecnologia de 4G, por exemplo, pudesse ser substituída
+      por um humano, quão (in)eficaz seria?
     </p>
+    <figure class="no-connection"></figure>
   </header>
   <main>
+    <p>
+      Esse experimento foi inspirado pelo seguinte tweet:
+    </p>
+    <blockquote class="tweet" lang="en">
+      Reading 250 words/min at 4.7 characters/word and 8 bits per character
+      means we can absorb about 71 kilobytes of text per hour. That's 1 megabyte
+      of text per 14 hours, 200 megabytes of text per year & 16 gigabytes of
+      text in 80 years (reading 8 hours per day).
+      <cite>&mdash; David Holz (@DavidSHolz)
+        <time>
+          <a href="https://twitter.com/DavidSHolz/status/1261882172295639041">
+            2020&nbsp;-&nbsp;05&nbsp;-&nbsp;17
+          </a>
+        </time>
+      </cite>
+    </blockquote>
     <h2>Humano padrão</h2>
     <section class="side-by-side">
       <article>
-        <h3>Escrita ("upload")</h3>
+        <h3>Escrita</h3>
+        <p class="sub-title">(isto é, velocidade de <em>upload</em>)</p>
         <p>
-          Média humana de <strong>32.5 WPM</strong> (palavras por minuto).<a href="#1"></a>
+          A média humana é de <strong>32.5 WPM</strong> (palavras por
+          minuto).<a href="#1"></a>
         </p>
         <p>
-          Cada palavra tem, em média na língua inglesa, 4.79 caracteres.<a href="#2"></a>
-          Portanto, a escrita tem uma velocidade média de 32.5 × 4.79 =
-          <strong>155.675 CPM</strong>.
+          Cada palavra tem, em média na língua inglesa, 4.79
+          caracteres.<a href="#2"></a> Portanto, a escrita tem uma velocidade
+          média de 32.5 × 4.79 = <strong>155.675 CPM</strong>.
         </p>
       </article>
       <article>
-        <h3>Leitura ("download")</h3>
+        <h3>Leitura</h3>
+        <p class="sub-title">(isto é, velocidade de <em>download</em>)</p>
         <p>
-          Média humana de <strong>863 CPM</strong>. (caracteres por minuto)<a href="#3"></a>
+          A média humana é de <strong>863 CPM</strong>
+          (caracteres por minuto).<a href="#3"></a>
         </p>
-        <cite></cite>
       </article>
     </section>
     <section class="onesie">
       <p>
-        Por simplicidade, utilizando como codificação ASCII, podemos assumir
+        Por simplicidade, utilizando como codificação ASCII, podemos determinar
         que cada caractere requer 7 bits para ser representado.<a href="#4"></a>
+        Com isso, podemos calcular a <i lang="en">bandwidth</i> de um humano,
+        tanto de escrita (upload) como de leitura (download):
       </p>
     </section>
     <section class="side-by-side">
       <article>
         <p>
-          155.675 × 7 = <strong>1089.725 bits/minuto</strong>.
+          155.675 × 7 = 1089.725 bits/minuto.
         </p>
         <p>
-          1089.725 / 60 = <strong>18.162 bits/segundo</strong>.
+          1089.725 / 60 = 18.162 bits/segundo.
         </p>
         <p>
           18.162 / 1000 = <strong>0.018 Kbps</strong>.
@@ -56,20 +78,22 @@
       </article>
       <article>
         <p>
-          863 × 7 = <strong>6041 bits/minuto</strong>.
+          863 × 7 = 6041 bits/minuto.
         </p>
         <p>
-          6041 / 60 = <strong>100.68<span class="over">3</span> bits/segundo</strong>.
+          6041 / 60 = 100.683
+          bits/segundo.
         </p>
         <p>
-          100.68<span class="over">3</span> / 1000 = <strong>0.101 Kbps</strong>.
+          100.683 / 1000 = <strong>0.101 Kbps</strong>.
         </p>
       </article>
     </section>
+    <figure class="waiting"></figure>
     <section class="onesie">
       <p>
-        Para efeito de comparação, uma internet móvel 2.5G (GPRS) tem uma velocidade
-        teórica de <strong>14&nbsp;Kbps</strong> para upload e
+        Para efeito de comparação, uma internet móvel 2G<a href="#N1"></a> tem
+        uma velocidade teórica de <strong>14&nbsp;Kbps</strong> para upload e
         <strong>40&nbsp;Kbps</strong> para download.<a href="#5"></a>
       </p>
     </section>
@@ -79,7 +103,7 @@
           Isso é uma velocidade de upload:
         </p>
         <p>
-          14 / 0.018 = <strong>777.78 vezes</strong> maior.
+          14 / 0.018 = <strong>777.78 vezes</strong> maior do que a de um humano.
         </p>
       </article>
       <article>
@@ -87,21 +111,177 @@
           Isso é uma velocidade de download:
         </p>
         <p>
-          40 / 0.101 = <strong>396.04 vezes</strong> maior.
+          40 / 0.101 = <strong>396.04 vezes</strong> maior do que a de um humano.
         </p>
       </article>
     </section>
+    <section class="onesie">
+      <p>
+        Curiosamente, a velocidade de escrita de um humano é menor do que a
+        velocidade de leitura, assim como a velocidade de upload costuma ser
+        menor do que a de download em conexões de rede de consumidor.
+      </p>
+    </section>
+    <h2>Humano exemplo (você)</h2>
+    <section class="onesie">
+      <p>
+        Já sabe suas velocidades de digitação e leitura? Não? Então faça testes
+        para calcular seu <i lang="en">bandwidth</i>.
+      </p>
+    </section>
+    <script>
+// Recursos usados tanto pela leitura quanto pela escrita //
+
+// Palavras sem acento, com tamanho médio de ~4.79
+const original_words = [
+  "amendoim", "banana", "uva", "cebola",
+  "aipim", "lhama", "ovo", "pilha", "arroz",
+  "tomate", "suco", "folha", "sol", "lua",
+  "galo", "banco", "bar", "copo", "flor",
+  "tulipa", "cubo", "quartzo", "rocha",
+  "esmeralda", "rio", "pulga", "giz", "juiz",
+  "sorvete", "caixa", "vaca", "bolha", "pato",
+  "carneiro", "cerca", "joia", "boca", "jato",
+  "luz", "tigre", "urso", "casa", "pastel",
+  "coala", "girafa", "batata", "cavalo", "olho",
+  "trufa", "eca", "truque", "hiato", "carta",
+  "indefinido", "azul", "mel", "rua", "dia",
+  "lago", "tio", "filho", "riacho", "iodo",
+  "faca", "amarelo", "grama", "mato", "elfo",
+  "vermelho", "elo", "pia", "portal"
+];
+
+// [Ref] bost.ocks.org/mike/shuffle/
+function shuffle(array) {
+  let m = array.length;
+  let t;
+  let i;
+  // While there remain elements to shuffle…
+  while(m) {
+    // Pick a remaining element…
+    i = ~~(Math.random() * m--);
+    // And swap it with the current element.
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+  }
+  return array;
+}
+    </script>
+    <section class="side-by-side">
+      <article>
+        <h3>Escrita</h3>
+        <p>
+          Digite as palavras na ordem em que elas aparecem abaixo. Aperte espaço
+          para partir para a palavra seguinte, <em>mesmo se você cometer um
+            erro</em>.
+        </p>
+      </article>
+      <article>
+        <h3>Leitura</h3>
+        <p>
+          Ajuste abaixo a velocidade das palavras até o máximo possível, desde
+          que você continue conseguindo ler e compreender <em>todas</em> as
+          palavras que aparecem.<a href="#N2"></a>
+        </p>
+      </article>
+    </section>
+    <section class="side-by-side">
+      <article>
+        <div>
+          <p id="upload-preview">
+            <span id="upload-typing">
+              <span id="upload-right"></span><span id="upload-wrong"></span>
+            </span>
+            <span id="upload-current"></span>
+            <span id="upload-next"></span>
+          </p>
+        </div>
+        <input id="upload-input" type="text">
+      </article>
+      <article>
+        <div>
+          <p id="download-display">&nbsp;</p>
+        </div>
+        <input id="download-range" type="range" min="100" step="10" max="500">
+        <input id="download-on" type="checkbox" checked>
+        <label for="download-on">Pausar</label>
+      </article>
+    </section>
+    <section class="side-by-side">
+      <article>
+        <h4>
+          Seus resultados:
+        </h4>
+        <p>
+          <strong id="upload-cps">0.0000</strong> CPS<br>
+          (média: 2.5945 CPS)
+        </p>
+        <p>
+          <strong id="upload-kbps">0.0000</strong> Kbps<br>
+          (média: 0.0182 Kbps)
+        </p>
+        <script src="./upload.js"></script>
+      </article>
+      <article>
+        <h4>
+          Seus resultados:
+        </h4>
+        <p>
+          <strong id="download-cps">0.0000</strong> CPS<br>
+          (média: 14.3833 CPS)
+        </p>
+        <p>
+          <strong id="download-kbps">0.0000</strong> Kbps<br>
+          (média: 0.1007 Kbps)
+        </p>
+        <script src="./download.js"></script>
+      </article>
+    </section>
+    <figure class="message"></figure>
   </main>
   <footer>
+    <section id="footnotes">
+      <h2>Notas</h2>
+      <article id="N1">
+        Informação referente à conexão 2.5G (GPRS), não estritamente 2G.
+      </article>
+      <article id="N2">
+        <p>
+          O estudo contendo os dados de velocidade de leitura utilizou leitura de
+          texto corrido, impresso em folhas de papel, e mediu o tempo de leitura
+          em voz alta.<a href="#3"></a> É de se esperar, portanto, que uma pessoa
+          lendo palavras isoladas, centralizadas, e em silêncio, alcance um
+          desempenho superior aos participantes do estudo citado.
+        </p>
+        <p>
+          Além disso, este teste utiliza-se da média de caracteres por palavra
+          para aferir a velocidade de leitura do usuário. Isso traz consigo uma
+          imprecisão inerente, e portanto nenhum resultado obtido deve ser
+          tomado como verdade absoluta.
+        </p>
+      </article>
+    </section>
+    <section id="me">
+      <img id="selfie" src="./dird.png">
+      <div>
+        <p>Obrigado pela atenção!</p>
+        <p>
+          <!--  yes im strong ùwú -->
+          <strong>Matheus Avellar</strong><br>
+          <a href="https://amendo.im/">amendo.im</a><br>
+          <a href="https://github.com/MatheusAvellar">github</a>
+        </p>
+      </div>
+    </section>
     <section id="citations">
       <h2>Citações</h2>
       <article id="1">
         Halverson, Christine; Horn, Daniel; Karat, Clare-Marie; Karat, John.
         <cite>
-          <a href="http://iovs.arvojournals.org/article.aspx?articleid=2166061">
+          <a href="https://dl.acm.org/doi/10.1145/302979.303160">
             Patterns of entry and correction in large vocabulary continuous
-            speech recognition systems
-          </a>
+            speech recognition systems</a>
         </cite> (1999). In Proceedings of the SIGCHI conference on Human Factors
         in Computing Systems (CHI '99). Association for Computing Machinery, NY.
         <a href="https://doi.org/10.1145/302979.303160">
@@ -118,8 +298,8 @@
         Dietz, Klaus; Trauzettel-Klosinski, Susanne; et al.
         <cite>
           <a href="http://iovs.arvojournals.org/article.aspx?articleid=2166061">
-            Standardized Assessment of Reading Performance: The New International
-            Reading Speed Texts</a>
+            Standardized Assessment of Reading Performance: The New
+            International Reading Speed Texts</a>
         </cite> (2012). Investigative Ophthalmology & Visual Science (August
         2012), Vol.53.
         <a href="https://doi.org/10.1167/iovs.11-8284">
@@ -139,6 +319,35 @@
         <cite>
           <a href="https://www.3gpp.org/technologies/keywords-acronyms/102-gprs-edge">
             GPRS &amp; EDGE</a></cite>. 3GPP.
+      </article>
+    </section>
+    <section id="bibliography">
+      <h2>Bibliografia</h2>
+      <article>
+        Bostock, Mike.
+        <cite>
+          <a href="https://bost.ocks.org/mike/shuffle/">
+            Fisher–Yates Shuffle</a>
+        </cite> (2012).
+      </article>
+    </section>
+    <section id="thanks">
+      <h2>Agradecimentos</h2>
+      <article>
+        <strong>Ilustrações:</strong> Magenta, Bogdan.
+        <cite>
+          <a href="https://icons8.com/ouch/style/mirage-1">
+            Mirage</a>
+        </cite>. Icons8.<br>
+        <strong>Fotografia do pug:</strong> Agee, Evan.
+        <a href="https://www.flickr.com/photos/evanagee/166407398/">
+          Pepper the black Pug puppy!</a> (2006). Flickr.<br>
+        <strong>Fotografia do melro-preto:</strong> Wills, Tony.
+        <a href="https://commons.wikimedia.org/wiki/File:Male_blackbird.jpg">
+          Male blackbird</a> (2007). Wikimedia Commons.<br>
+        <strong>Edição das fotografias:</strong> Gummy.
+        <a href="https://web.archive.org/web/20140125064215/http://www.freakingnews.com/Dirds-Pictures--4383.asp">
+          Dirds! Advanced Photoshop Contest</a> (2014). Freaking News.
       </article>
     </section>
   </footer>
