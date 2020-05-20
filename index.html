@@ -3,7 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>Bandwidth Humana</title>
+  <meta name="author" content="Matheus Avellar">
+  <meta name="description" content="Quão eficiente seria uma conexão utilizando humanos como transmissores de informação? Se a tecnologia de 4G, por exemplo, pudesse ser substituída por um humano, quão (in)eficaz seria?">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <header>
@@ -360,7 +364,10 @@ function shuffle(array) {
       </article>
     </section>
   </footer>
-  <link href="./style.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,600;1,400;1,600&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+  <!--[Ref] csswizardry.com/2020/05/the-fastest-google-fonts-->
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,600;1,400;1,600&family=Libre+Baskerville:wght@700&display=swap">
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,600;1,400;1,600&family=Libre+Baskerville:wght@700&display=swap">
 </body>
 </html>
