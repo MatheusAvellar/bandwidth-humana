@@ -84,6 +84,12 @@ blockquote.tweet cite time {
   padding: 0 1em;
   vertical-align: top;
 }
+.sticky {
+  position: sticky;
+  top: 0;
+  background-color: #fefefe;
+  box-shadow: 0 0.75em 0.75em #fefefe;
+}
 #upload-preview {
   white-space: nowrap;
   overflow-x: hidden;

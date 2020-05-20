@@ -32,96 +32,104 @@
         </time>
       </cite>
     </blockquote>
-    <h2>Humano padrão</h2>
-    <section class="side-by-side">
-      <article>
-        <h3>Escrita</h3>
-        <p class="sub-title">(isto é, velocidade de <em>upload</em>)</p>
+    <div>
+      <h2>Humano padrão</h2>
+      <section class="sticky side-by-side">
+        <article>
+          <h3>Escrita</h3>
+          <p class="sub-title">(isto é, velocidade de <em>upload</em>)</p>
+        </article>
+        <article>
+          <h3>Leitura</h3>
+          <p class="sub-title">(isto é, velocidade de <em>download</em>)</p>
+        </article>
+      </section>
+      <section class="side-by-side">
+        <article>
+          <p>
+            A média humana é de <strong>32.5 WPM</strong> (palavras por
+            minuto).<a href="#1"></a>
+          </p>
+          <p>
+            Cada palavra tem, em média na língua inglesa, 4.79
+            caracteres.<a href="#2"></a> Portanto, a escrita tem uma velocidade
+            média de 32.5 × 4.79 = <strong>155.675 CPM</strong>.
+          </p>
+        </article>
+        <article>
+          <p>
+            A média humana é de <strong>863 CPM</strong>
+            (caracteres por minuto).<a href="#3"></a>
+          </p>
+        </article>
+      </section>
+      <section class="onesie">
         <p>
-          A média humana é de <strong>32.5 WPM</strong> (palavras por
-          minuto).<a href="#1"></a>
+          Por simplicidade, utilizando como codificação ASCII, podemos determinar
+          que cada caractere requer 7 bits para ser representado.<a href="#4"></a>
+          Com isso, podemos calcular a <i lang="en">bandwidth</i> de um humano,
+          tanto de escrita (upload) como de leitura (download):
         </p>
+      </section>
+      <section class="side-by-side">
+        <article>
+          <p>
+            155.675 × 7 = 1089.725 bits/minuto.
+          </p>
+          <p>
+            1089.725 / 60 = 18.162 bits/segundo.
+          </p>
+          <p>
+            18.162 / 1000 = <strong>0.018 Kbps</strong>.
+          </p>
+        </article>
+        <article>
+          <p>
+            863 × 7 = 6041 bits/minuto.
+          </p>
+          <p>
+            6041 / 60 = 100.683
+            bits/segundo.
+          </p>
+          <p>
+            100.683 / 1000 = <strong>0.101 Kbps</strong>.
+          </p>
+        </article>
+      </section>
+      <figure class="waiting"></figure>
+      <section class="onesie">
         <p>
-          Cada palavra tem, em média na língua inglesa, 4.79
-          caracteres.<a href="#2"></a> Portanto, a escrita tem uma velocidade
-          média de 32.5 × 4.79 = <strong>155.675 CPM</strong>.
+          Para efeito de comparação, uma internet móvel 2G<a href="#N1"></a> tem
+          uma velocidade teórica de <strong>14&nbsp;Kbps</strong> para upload e
+          <strong>40&nbsp;Kbps</strong> para download.<a href="#5"></a>
         </p>
-      </article>
-      <article>
-        <h3>Leitura</h3>
-        <p class="sub-title">(isto é, velocidade de <em>download</em>)</p>
+      </section>
+      <section class="side-by-side">
+        <article>
+          <p>
+            Isso é uma velocidade de upload:
+          </p>
+          <p>
+            14 / 0.018 = <strong>777.78 vezes</strong> maior do que a de um humano.
+          </p>
+        </article>
+        <article>
+          <p>
+            Isso é uma velocidade de download:
+          </p>
+          <p>
+            40 / 0.101 = <strong>396.04 vezes</strong> maior do que a de um humano.
+          </p>
+        </article>
+      </section>
+      <section class="onesie">
         <p>
-          A média humana é de <strong>863 CPM</strong>
-          (caracteres por minuto).<a href="#3"></a>
+          Curiosamente, a velocidade de escrita de um humano é menor do que a
+          velocidade de leitura, assim como a velocidade de upload costuma ser
+          menor do que a de download em conexões de rede de consumidor.
         </p>
-      </article>
-    </section>
-    <section class="onesie">
-      <p>
-        Por simplicidade, utilizando como codificação ASCII, podemos determinar
-        que cada caractere requer 7 bits para ser representado.<a href="#4"></a>
-        Com isso, podemos calcular a <i lang="en">bandwidth</i> de um humano,
-        tanto de escrita (upload) como de leitura (download):
-      </p>
-    </section>
-    <section class="side-by-side">
-      <article>
-        <p>
-          155.675 × 7 = 1089.725 bits/minuto.
-        </p>
-        <p>
-          1089.725 / 60 = 18.162 bits/segundo.
-        </p>
-        <p>
-          18.162 / 1000 = <strong>0.018 Kbps</strong>.
-        </p>
-      </article>
-      <article>
-        <p>
-          863 × 7 = 6041 bits/minuto.
-        </p>
-        <p>
-          6041 / 60 = 100.683
-          bits/segundo.
-        </p>
-        <p>
-          100.683 / 1000 = <strong>0.101 Kbps</strong>.
-        </p>
-      </article>
-    </section>
-    <figure class="waiting"></figure>
-    <section class="onesie">
-      <p>
-        Para efeito de comparação, uma internet móvel 2G<a href="#N1"></a> tem
-        uma velocidade teórica de <strong>14&nbsp;Kbps</strong> para upload e
-        <strong>40&nbsp;Kbps</strong> para download.<a href="#5"></a>
-      </p>
-    </section>
-    <section class="side-by-side">
-      <article>
-        <p>
-          Isso é uma velocidade de upload:
-        </p>
-        <p>
-          14 / 0.018 = <strong>777.78 vezes</strong> maior do que a de um humano.
-        </p>
-      </article>
-      <article>
-        <p>
-          Isso é uma velocidade de download:
-        </p>
-        <p>
-          40 / 0.101 = <strong>396.04 vezes</strong> maior do que a de um humano.
-        </p>
-      </article>
-    </section>
-    <section class="onesie">
-      <p>
-        Curiosamente, a velocidade de escrita de um humano é menor do que a
-        velocidade de leitura, assim como a velocidade de upload costuma ser
-        menor do que a de download em conexões de rede de consumidor.
-      </p>
-    </section>
+      </section>
+    </div>
     <h2>Humano exemplo (você)</h2>
     <section class="onesie">
       <p>
